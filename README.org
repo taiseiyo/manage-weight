@@ -2,7 +2,7 @@
 
 ** Overview
 Easy weight management application. Manage daily weight changes while
-looking at graph.
+looking at graph. Record the date and the weight of the day.
 
 Technology
 
@@ -19,3 +19,24 @@ Technology
 ** Figure
 
 [[https://raw.githubusercontent.com/taiseiyo/manage-weight/master/pic/operation.png]]
+
+** Warning
+When editing with emacs
+
+node_modules/react-scripts/config/webpackDevServer.config.js
+
+Please edit.
+
+- before
+#+begin_src 
+watchOptions: {
+ignored: ignoredFiles(paths.appSrc),
+},	
+#+end_src
+
+- after
+#+begin_src 
+watchOptions: {
+ignored: [ignoredFiles(paths.appSrc), "**/.#*", "**/*~", "**/#*#"],
+},
+#+end_src
