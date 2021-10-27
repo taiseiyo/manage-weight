@@ -1,0 +1,21 @@
+* Weight Manager
+
+** Overview
+Easy weight management application. Manage daily weight changes while
+looking at graph.
+
+Technology
+
+- front_end
+  - React
+  - material-UI
+
+- back_end
+  - firebase
+
+** URL
+- [[https://manage-weight.web.app/][URL]]
+
+** Figure
+
+[[]]
