@@ -6,7 +6,7 @@ import "./InputWeight.css";
 
 const formStyle = {
   display: "flex",
-  justifyContent: "space-evenly",
+  justifyContent: "space-around",
 };
 
 const inputLabelStyle = {
@@ -19,6 +19,7 @@ const inputStyle = {
   height: "60px",
   color: "green",
   fontSize: "1.5rem",
+  width: "11rem",
 };
 
 function InputWeight(props) {

@@ -20,17 +20,18 @@ initializeApp(firebaseConfig);
 let db = getDatabase();
 
 function WeightShowButton(props) {
-  let {data, setData} = props;
+  let {data, setData, userName} = props;
   let updateData = {};
 
   let receiveData = () => {
-    const starCountRef = ref(db, "/weight-data/");
+    const starCountRef = ref(db, userName);
+    console.log(starCountRef);
+
     onValue(starCountRef, (snapshot) => {
       snapshot.forEach((children) => {
         let val = children.val();
         updateData[val.date] = val.weight;
         setData({...data, ...updateData});
-        console.log(data);
       });
     });
   };

@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import TextField from "@mui/material/TextField";
+
 import {initializeApp} from "firebase/app";
 import {getDatabase, ref, child, push, update} from "firebase/database";
 
@@ -20,14 +22,17 @@ initializeApp(firebaseConfig);
 let db = getDatabase();
 
 function WeightSendButton(props) {
+  let {date, weight, userName} = props;
+  const newPostKey = push(child(ref(db), "posts")).key;
+  const updates = {};
+
   let sendData = (date, weight) => {
     const postData = {
       date: date,
       weight: weight,
     };
-    const newPostKey = push(child(ref(db), "posts")).key;
-    const updates = {};
-    updates["/weight-data/" + newPostKey] = postData;
+
+    updates["/" + userName + "/" + newPostKey] = postData;
     return update(ref(db), updates);
   };
 
@@ -49,7 +54,6 @@ function WeightSendButton(props) {
     return weight >= 0 && weight < 100 ? true : false;
   };
 
-  let {date, weight} = props;
   let flag = isYYYYMMDD(date) && isKgWeight(weight) ? false : true;
 
   return (

@@ -15,37 +15,42 @@ export default function Fig(props) {
     ],
   };
 
-  const options = {
-    scales: {
-      xAxes: [
-        {
-          scaleLabel: {
-            display: true,
-            labelString: "日付",
-            fontColor: "赤色",
-            fontSize: 25,
-          },
-          ticks: {
-            fontSize: 25,
-          },
-        },
-      ],
+  // const options = {
+  //   scales: {
+  //     xAxes: [
+  //       {
+  //         scaleLabel: {
+  //           display: true,
+  //           labelString: "日付",
+  //           fontColor: "赤色",
+  //           fontSize: 25,
+  //         },
+  //         ticks: {
+  //           fontSize: 25,
+  //         },
+  //       },
+  //     ],
 
-      yAxes: [
-        {
-          scaleLabel: {
-            display: true,
-            labelString: "体重",
-            fontColor: "青色",
-            fontSize: 25,
-          },
-          ticks: {
-            fontSize: 25,
-          },
-        },
-      ],
-    },
-  };
+  //     yAxes: [
+  //       {
+  //         scaleLabel: {
+  //           display: true,
+  //           labelString: "体重",
+  //           fontColor: "青色",
+  //           fontSize: 25,
+  //         },
+  //         ticks: {
+  //           fontSize: 25,
+  //         },
+  //       },
+  //     ],
+  //   },
+  // };
 
-  return <Line data={data} options={options} height={80} />;
+  let height = "";
+  window.screen.width <= 450 ? (height = 180) : (height = 80);
+  return <Line data={data} height={height} />;
 }
+
+// height={80}
+// options={options}

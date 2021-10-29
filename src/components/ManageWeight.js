@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from "react";
-import {initializeApp} from "firebase/app";
-import {getDatabase, ref, onValue} from "firebase/database";
 
 import InputWeight from "./InputWeight";
 import WeightSendButton from "./WeightSendButton";
 import WeightShowButton from "./WeightShowButton";
 import Fig from "./Fig";
 
-import config from "../config.json";
+import "./css/ManageWeight.css";
 
 const textStyle = {
   textAlign: "center",
@@ -17,42 +15,31 @@ const textStyle = {
 
 const buttonStyle = {
   display: "flex",
-  justifyContent: "space-evenly",
-  marginTop: "30px",
+  justifyContent: "space-around",
+  marginTop: "20px",
   marginBottom: "20px",
 };
 
-const firebaseConfig = {
-  apiKey: config.apiKey,
-  authDomain: config.authDomain,
-  projectId: config.projectId,
-  storageBucket: config.storageBucket,
-  messagingSenderId: config.messagingSenderId,
-  appId: config.appId,
-  measurementId: config.measurementId,
-};
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
-let db = getDatabase();
-
-function ManageWeight() {
+function ManageWeight(props) {
+  let {userName} = props;
   let [date, setDate] = useState("");
   let [weight, setWeight] = useState(-1);
   let [data, setData] = useState([]);
 
   return (
-    <>
-      <p style={textStyle}>Welcome!!</p>
-      <InputWeight setDate={setDate} setWeight={setWeight} />
-      <div style={buttonStyle}>
-        <WeightSendButton date={date} weight={weight} />
-        <WeightShowButton data={data} setData={setData} />
-      </div>
-      <div style={{display: "flex", justifyContent: "space-evenly"}}>
-        <Fig data={data} />
-      </div>
-    </>
+    <div className="overall overall_v2">
+      <>
+        <p style={textStyle}>Welcome!!</p>
+        <InputWeight setDate={setDate} setWeight={setWeight} />
+        <div style={buttonStyle}>
+          <WeightSendButton date={date} weight={weight} userName={userName} />
+          <WeightShowButton data={data} setData={setData} userName={userName} />
+        </div>
+        <div style={{display: "flex", justifyContent: "space-evenly"}}>
+          <Fig data={data} />
+        </div>
+      </>
+    </div>
   );
 }
 export default ManageWeight;
