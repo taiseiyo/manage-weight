@@ -14,4 +14,79 @@
   background-position: 0 0, 20px 20px;
 }
 
+.popout {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 30px;
+  visibility: hidden;
+}
+.popout .animation1 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 0s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation2 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 0.5s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation3 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 1s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation4 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 1.5s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation5 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 2s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation6 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 2.5s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation7 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 3s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+.popout .animation8 {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  animation: popanime 1s 3.5s ease-out forwards;
+  /* ease-out - specifies a transition effect with a slow end */
+}
+
+@keyframes popanime {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 /*# sourceMappingURL=ManageWeight.css.map */

@@ -40,3 +40,24 @@ watchOptions: {
 ignored: [ignoredFiles(paths.appSrc), "**/.#*", "**/*~", "**/#*#"],
 },
 #+end_src
+
+** Firebase Configuration
+#+begin_src 
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "pic/*"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+#+end_src

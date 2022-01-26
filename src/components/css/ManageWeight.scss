@@ -14,3 +14,35 @@
       background-position: 0 0,20px 20px;
   }
 }
+
+
+
+.popout {
+    display:flex;
+    justify-content:center;
+    padding: 10px 0;
+    font-size: 30px;
+    visibility: hidden;
+    @for $i from 0 through 7{
+        // 演算の際は#必要
+        .animation#{$i+1} {
+            // position: relative;
+	    text-align:center;
+	    width: 60px;
+	    height: 60px;
+            animation: popanime 1s $i*0.5s ease-out forwards;
+	    /* ease-out - specifies a transition effect with a slow end */
+        }
+    }    
+}
+
+@keyframes popanime {
+    0% {
+        visibility:visible;
+        opacity:0;
+    }
+    100% {
+        visibility:visible;
+	opacity:1;
+    }
+}

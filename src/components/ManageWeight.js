@@ -8,9 +8,9 @@ import Fig from "./Fig";
 import "./css/ManageWeight.css";
 
 const textStyle = {
-  textAlign: "center",
   color: "blue",
   fontSize: "4rem",
+  marginTop: "3rem",
 };
 
 const buttonStyle = {
@@ -29,7 +29,17 @@ function ManageWeight(props) {
   return (
     <div className="overall overall_v2">
       <>
-        <p style={textStyle}>Welcome!!</p>
+        <div style={textStyle} className="popout">
+          <span className="animation1">W</span>
+          <span className="animation2">E</span>
+          <span className="animation3">L</span>
+          <span className="animation4">C</span>
+          <span className="animation5">O</span>
+          <span className="animation6">M</span>
+          <span className="animation7">E</span>
+          <span className="animation8">!</span>
+        </div>
+
         <InputWeight setDate={setDate} setWeight={setWeight} />
         <div style={buttonStyle}>
           <WeightSendButton date={date} weight={weight} userName={userName} />
